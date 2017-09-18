@@ -26,8 +26,11 @@ public class ListarPessoaServlet extends HttpServlet {
             em = emf.createEntityManager();
 
             //query for all the persons in database
-            List pessoas = em.createQuery("select p from Pessoa p").getResultList();
-            request.setAttribute("listaPessoas",pessoas);
+            List professor = em.createQuery("select p from Professor p").getResultList();
+            request.setAttribute("listaProfessores",professor);
+            
+            List aluno = em.createQuery("select a from Aluno a").getResultList();
+            request.setAttribute("listaAlunos",aluno);
             
             //Forward to the jsp page for rendering
             request.getRequestDispatcher("ListarPessoas.jsp").forward(request, response);

@@ -12,13 +12,14 @@
     </head>
     <body>
 
-    <h1>Criar uma pessoa</h1>
-    <form id="criarPessoasForm" action="CriarPessoa" method="post">
+    <h1>Criar um professor</h1>
+    <form id="criarProfessorForm" action="CriarProfessor" method="post">
     <table>
-        <tr><td>ID:</td><td><input type="text" id = "id" name="id" /></td></tr>
+        <tr><td>ID:</td><td><input type="text" id = "id" name="id" disabled="true" /></td></tr>
         <tr><td>Nome</td><td><input type="text" id = "nome" name="nome" /></td></tr>
+        <tr><td>Titulação</td><td><input type="text" id = "titulacao" name="titulacao" /></td></tr>
     </table>
-    <input type="submit" id="CriarPessoa" value="CriarPessoa" />
+    <input type="submit" id="CriarProfessor" value="CriarProfessor" />
     </form>
 <a href="ListarPessoas"><strong>Ir para lista de pessoas</strong></a>
 </body>
