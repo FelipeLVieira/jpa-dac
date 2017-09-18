@@ -16,14 +16,12 @@
     
 <table id="listaProfessores" border="3">
 <tr >
-    <th bgcolor=>ID</th>
     <th bgcolor=>Nome</th>
     <th bgcolor=>Email</th>
     <th bgcolor=>Titulacao</th>
 </tr>
 <c:forEach var="professor" begin="0" items="${requestScope.listaProfessores}">
 <tr>
-    <td>${professor.id}&nbsp;&nbsp;</td> 
     <td>${professor.nome}&nbsp;&nbsp;</td>
     <td>${professor.email}&nbsp;&nbsp;</td>
     <td>${professor.titulacao}&nbsp;&nbsp;</td>
@@ -32,17 +30,18 @@
 </c:forEach>
 </table>
 <br>
+<a href="CriarProfessor.jsp"><strong>Adicionar um professor</strong></a>
+<br>
+<br>
 <br>
 <table id="listaAlunos" border="3">
 <tr >
-    <th bgcolor=>ID</th>
     <th bgcolor=>Nome</th>
     <th bgcolor=>Email</th>
     <th bgcolor=>Matricula</th>
 </tr>
 <c:forEach var="aluno" begin="0" items="${requestScope.listaAlunos}">
 <tr>
-    <td>${aluno.id}&nbsp;&nbsp;</td> 
     <td>${aluno.nome}&nbsp;&nbsp;</td>
     <td>${aluno.email}&nbsp;&nbsp;</td>
     <td>${aluno.matricula}&nbsp;&nbsp;</td>
@@ -50,9 +49,6 @@
 <a href="EditarAluno.jsp??param1=${aluno.id}"><strong>Editar</strong></a>
 </c:forEach>
 </table>
-<br>
-<br>
-<a href="CriarProfessor.jsp"><strong>Adicionar um professor</strong></a>
 <br>
 <a href="CriarAluno.jsp"><strong>Adicionar um aluno</strong></a>
 </body>

@@ -1,21 +1,27 @@
 package enterprise.web_jpa_war.servlet;
 
-import java.io.*;
-import javax.servlet.*;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.*;
-
-import javax.persistence.PersistenceUnit;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityManager;
+import java.io.IOException;
+import java.io.PrintWriter;
 import javax.annotation.Resource;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceUnit;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.transaction.UserTransaction;
 import jpa.entities.Professor;
 
+/**
+ *
+ * @author felip
+ */
 
-@WebServlet(name="CriarProfessor", urlPatterns={"/CriarProfessor"})
-public class CriarProfessorServlet extends HttpServlet {
-    
+@WebServlet(name="EditarProfessor", urlPatterns={"/EditarProfessor"})
+public class EditarProfessorServlet extends HttpServlet {
+
     @PersistenceUnit
     //The emf corresponding to 
     private EntityManagerFactory emf;  

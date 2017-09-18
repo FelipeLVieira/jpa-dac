@@ -9,15 +9,15 @@ import javax.persistence.*;
 public class Professor extends Pessoa{
     private String titulacao;
     
-    public Professor(String titulacao, String nome) {
-        super(nome);
+    public Professor(String nome, String titulacao) {
+        super(nome, titulacao);
         this.titulacao = titulacao;
     }
 
     public Professor() {
     }
 
-    public Professor(String titulacao, String nome, String email) {
+    public Professor(String nome, String titulacao, String email) {
         super(nome, email);
         this.titulacao = titulacao;
     }

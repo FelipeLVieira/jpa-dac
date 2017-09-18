@@ -12,12 +12,12 @@ public class Aluno extends Pessoa{
     public Aluno() {
     }
     
-    public Aluno(String matricula, String nome) {
+    public Aluno(String nome, String matricula) {
         super(nome);
         this.matricula = matricula;
     }
 
-    public Aluno(String matricula, String nome, String email) {
+    public Aluno(String nome, String email, String matricula) {
         super(nome, email);
         this.matricula = matricula;
     }

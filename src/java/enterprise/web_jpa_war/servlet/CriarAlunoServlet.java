@@ -10,11 +10,11 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityManager;
 import javax.annotation.Resource;
 import javax.transaction.UserTransaction;
-import jpa.entities.Professor;
+import jpa.entities.Aluno;
 
 
-@WebServlet(name="CriarProfessor", urlPatterns={"/CriarProfessor"})
-public class CriarProfessorServlet extends HttpServlet {
+@WebServlet(name="CriarAluno", urlPatterns={"/CriarAluno"})
+public class CriarAlunoServlet extends HttpServlet {
     
     @PersistenceUnit
     //The emf corresponding to 
@@ -32,11 +32,11 @@ public class CriarProfessorServlet extends HttpServlet {
             
             //Get the data from user's form
             String nome  = (String) request.getParameter("nome");
-            String titulacao = (String) request.getParameter("titulacao");
+            String matricula = (String) request.getParameter("matricula");
             String email = (String) request.getParameter("email");
             
             //Create a person instance out of it
-            Professor professor = new Professor(nome, email, titulacao);
+            Aluno aluno = new Aluno(nome, email, matricula);
             
             //begin a transaction
             utx.begin();
@@ -45,7 +45,7 @@ public class CriarProfessorServlet extends HttpServlet {
             //the transaction
             em = emf.createEntityManager();
             //persist the person entity
-            em.persist(professor);
+            em.persist(aluno);
             //commit transaction which will trigger the em to 
             //commit newly created entity into database
             utx.commit();
