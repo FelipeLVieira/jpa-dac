@@ -8,17 +8,12 @@ import javax.persistence.*;
 @Entity
 public class Professor extends Pessoa{
     private String titulacao;
-    
-    public Professor(String nome, String titulacao) {
-        super(nome, titulacao);
-        this.titulacao = titulacao;
-    }
 
     public Professor() {
     }
 
-    public Professor(String nome, String titulacao, String email) {
-        super(nome, email);
+    public Professor(Long id, String nome, String titulacao, String email) {
+        super(id, nome, email);
         this.titulacao = titulacao;
     }
 

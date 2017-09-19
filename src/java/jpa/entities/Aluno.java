@@ -11,14 +11,9 @@ public class Aluno extends Pessoa{
 
     public Aluno() {
     }
-    
-    public Aluno(String nome, String matricula) {
-        super(nome);
-        this.matricula = matricula;
-    }
 
-    public Aluno(String nome, String email, String matricula) {
-        super(nome, email);
+    public Aluno(Long id, String nome, String email, String matricula) {
+        super(id, nome, email);
         this.matricula = matricula;
     }
 

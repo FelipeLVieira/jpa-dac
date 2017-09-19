@@ -31,12 +31,13 @@ public class CriarProfessorServlet extends HttpServlet {
         try {
             
             //Get the data from user's form
+            Long id = Long.valueOf(request.getParameter("id"));
             String nome  = (String) request.getParameter("nome");
             String titulacao = (String) request.getParameter("titulacao");
             String email = (String) request.getParameter("email");
             
             //Create a person instance out of it
-            Professor professor = new Professor(nome, email, titulacao);
+            Professor professor = new Professor(id, nome, email, titulacao);
             
             //begin a transaction
             utx.begin();

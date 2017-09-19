@@ -22,13 +22,13 @@ public class Pessoa implements Serializable {
         this.id = 0l;
     }
 
-    public Pessoa(String nome) {
-        this.id = 0l;
+    public Pessoa(Long id, String nome) {
+        this.id = id;
         this.nome = nome;
     }
 
-    public Pessoa(String nome, String email) {
-        this.id = 0l;
+    public Pessoa(Long id, String nome, String email) {
+        this.id = id;
         this.nome = nome;
         this.email = email;
     }

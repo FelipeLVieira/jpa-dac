@@ -19,7 +19,7 @@ import jpa.entities.Professor;
  * @author felip
  */
 
-@WebServlet(name="EditarProfessor", urlPatterns={"/EditarProfessor"})
+@WebServlet(name="EditarProfessorServlet", urlPatterns={"/EditarProfessorServlet"})
 public class EditarProfessorServlet extends HttpServlet {
 
     @PersistenceUnit
@@ -28,7 +28,10 @@ public class EditarProfessorServlet extends HttpServlet {
     
     @Resource
     private UserTransaction utx;
-
+    
+    public EntityManager getEntityManager() {
+        return emf.createEntityManager();
+    }
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException {
@@ -36,22 +39,12 @@ public class EditarProfessorServlet extends HttpServlet {
         EntityManager em = null;
         try {
             
-            //Get the data from user's form
-            String nome  = (String) request.getParameter("nome");
-            String titulacao = (String) request.getParameter("titulacao");
-            String email = (String) request.getParameter("email");
-            
-            //Create a person instance out of it
-            Professor professor = new Professor(nome, email, titulacao);
-            
-            //begin a transaction
             utx.begin();
-            //create an em. 
-            //Since the em is created inside a transaction, it is associsated with 
-            //the transaction
-            em = emf.createEntityManager();
+            em = getEntityManager();
+            
+            Professor professor = em.getReference(Professor.class, Long.valueOf(request.getParameter("id")));
             //persist the person entity
-            em.persist(professor);
+            professor = em.merge(professor);
             //commit transaction which will trigger the em to 
             //commit newly created entity into database
             utx.commit();

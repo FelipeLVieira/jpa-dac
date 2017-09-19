@@ -31,12 +31,13 @@ public class CriarAlunoServlet extends HttpServlet {
         try {
             
             //Get the data from user's form
+            Long id = Long.valueOf(request.getParameter("id"));
             String nome  = (String) request.getParameter("nome");
             String matricula = (String) request.getParameter("matricula");
             String email = (String) request.getParameter("email");
             
             //Create a person instance out of it
-            Aluno aluno = new Aluno(nome, email, matricula);
+            Aluno aluno = new Aluno(id, nome, email, matricula);
             
             //begin a transaction
             utx.begin();

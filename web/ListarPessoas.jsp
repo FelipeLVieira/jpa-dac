@@ -26,7 +26,7 @@
     <td>${professor.email}&nbsp;&nbsp;</td>
     <td>${professor.titulacao}&nbsp;&nbsp;</td>
 </tr> 
-<a href="EditarProfessor.jsp??param1=${professor.id}" ><strong>Editar</strong></a>
+<a href="EditarProfessor.jsp?param1=${professor.id}&param2=${professor.nome}&param3=${professor.email}&param4=${professor.titulacao}" ><strong>Editar</strong></a>
 </c:forEach>
 </table>
 <br>
@@ -46,7 +46,7 @@
     <td>${aluno.email}&nbsp;&nbsp;</td>
     <td>${aluno.matricula}&nbsp;&nbsp;</td>
 </tr>
-<a href="EditarAluno.jsp??param1=${aluno.id}"><strong>Editar</strong></a>
+<a href="EditarAluno.jsp?param1=${aluno.id}&param2=${aluno.nome}&param3=${aluno.email}&param4=${aluno.matricula}"><strong>Editar</strong></a>
 </c:forEach>
 </table>
 <br>
