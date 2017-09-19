@@ -14,13 +14,13 @@
 
     <h1>Editar professor <%= request.getParameter("param2") %></h1>
     <form id="editarProfessorForm" action="EditarProfessorServlet" method="post">
-    <table>
-        <tr><td>ID:</td><td><input type="text" id = "id" name="id" disabled="true" value="<%= request.getParameter("param1") %>" /></td></tr>
-        <tr><td>Nome:</td><td><input type="text" id = "nome" name="nome" value="<%= request.getParameter("param2") %>"/></td></tr>
-        <tr><td>Titulacao:</td><td><input type="text" id = "titulacao" name="titulacao" value="<%= request.getParameter("param3") %>" /></td></tr>
-        <tr><td>Email:</td><td><input type="text" id = "email" name="email" value="<%= request.getParameter("param4") %>" /></td></tr>
-    </table>
-    <input type="submit" id="EditarProfessorServlet" value="Editar Professor" />
+        <table>
+            <tr><td>ID:</td><td><input type="text" id ="idProf" name="idProf" disabled="true" value="<%= request.getParameter("param1") %>" /></td></tr>
+            <tr><td>Nome:</td><td><input type="text" id ="nome" name="nome" value="<%= request.getParameter("param2") %>"/></td></tr>
+            <tr><td>Titulacao:</td><td><input type="text" id ="titulacao" name="titulacao" value="<%= request.getParameter("param3") %>" /></td></tr>
+            <tr><td>Email:</td><td><input type="text" id ="email" name="email" value="<%= request.getParameter("param4") %>" /></td></tr>
+        </table>
+        <input type="submit" id="EditarProfessorServlet" value="Editar Professor" />
     </form>
 <a href="ListarPessoas"><strong>Ir para lista de pessoas</strong></a>
 </body>

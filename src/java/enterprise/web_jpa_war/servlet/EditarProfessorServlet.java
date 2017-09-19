@@ -1,7 +1,6 @@
 package enterprise.web_jpa_war.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.annotation.Resource;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -39,19 +38,19 @@ public class EditarProfessorServlet extends HttpServlet {
         EntityManager em = null;
         try {
             
+            Long profId = (Long) Long.parseLong(request.getParameter("idProf"));
+            
+            System.out.println(request.getParameterNames().toString());
+            
             utx.begin();
             em = getEntityManager();
             
-            Professor professor = em.getReference(Professor.class, Long.valueOf(request.getParameter("id")));
-            //persist the person entity
+            Professor professor = em.getReference(Professor.class, profId);
             professor = em.merge(professor);
-            //commit transaction which will trigger the em to 
-            //commit newly created entity into database
+
             utx.commit();
-            
-            //Forward to ListPerson servlet to list persons along with the newly
-            //created person above
-            request.getRequestDispatcher("ListarPessoas").forward(request, response);
+
+            request.getRequestDispatcher("ListarPessoas.jsp").forward(request, response);
         } catch (Exception ex) {
             throw new ServletException(ex);
         } finally {
