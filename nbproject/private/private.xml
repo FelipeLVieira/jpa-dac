@@ -3,16 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/F:/UFF/Desenvolvimento%20de%20Aplicaçoes%20Corporativas/jpa-dac/src/java/jpa/entities/Pessoa.java</file>
             <file>file:/F:/UFF/Desenvolvimento%20de%20Aplicaçoes%20Corporativas/jpa-dac/web/CriarAluno.jsp</file>
             <file>file:/F:/UFF/Desenvolvimento%20de%20Aplicaçoes%20Corporativas/jpa-dac/src/conf/persistence.xml</file>
             <file>file:/F:/UFF/Desenvolvimento%20de%20Aplicaçoes%20Corporativas/jpa-dac/src/java/enterprise/web_jpa_war/servlet/CriarProfessorServlet.java</file>
             <file>file:/F:/UFF/Desenvolvimento%20de%20Aplicaçoes%20Corporativas/jpa-dac/src/java/enterprise/web_jpa_war/servlet/CriarAlunoServlet.java</file>
             <file>file:/F:/UFF/Desenvolvimento%20de%20Aplicaçoes%20Corporativas/jpa-dac/web/CriarProfessor.jsp</file>
-            <file>file:/F:/UFF/Desenvolvimento%20de%20Aplicaçoes%20Corporativas/jpa-dac/web/ListarPessoas.jsp</file>
+            <file>file:/F:/UFF/Desenvolvimento%20de%20Aplicaçoes%20Corporativas/jpa-dac/web/WEB-INF/web.xml</file>
             <file>file:/F:/UFF/Desenvolvimento%20de%20Aplicaçoes%20Corporativas/jpa-dac/src/java/jpa/entities/Professor.java</file>
-            <file>file:/F:/UFF/Desenvolvimento%20de%20Aplicaçoes%20Corporativas/jpa-dac/src/java/jpa/entities/Aluno.java</file>
+            <file>file:/F:/UFF/Desenvolvimento%20de%20Aplicaçoes%20Corporativas/jpa-dac/web/EditarProfessor.jsp</file>
             <file>file:/F:/UFF/Desenvolvimento%20de%20Aplicaçoes%20Corporativas/jpa-dac/src/java/enterprise/web_jpa_war/servlet/ListarPessoaServlet.java</file>
+            <file>file:/F:/UFF/Desenvolvimento%20de%20Aplicaçoes%20Corporativas/jpa-dac/build.xml</file>
+            <file>file:/F:/UFF/Desenvolvimento%20de%20Aplicaçoes%20Corporativas/jpa-dac/src/java/jpa/entities/Pessoa.java</file>
+            <file>file:/F:/UFF/Desenvolvimento%20de%20Aplicaçoes%20Corporativas/jpa-dac/web/ListarPessoas.jsp</file>
+            <file>file:/F:/UFF/Desenvolvimento%20de%20Aplicaçoes%20Corporativas/jpa-dac/src/java/enterprise/web_jpa_war/servlet/EditarProfessorServlet.java</file>
+            <file>file:/F:/UFF/Desenvolvimento%20de%20Aplicaçoes%20Corporativas/jpa-dac/src/java/jpa/entities/Aluno.java</file>
         </group>
     </open-files>
 </project-private>
