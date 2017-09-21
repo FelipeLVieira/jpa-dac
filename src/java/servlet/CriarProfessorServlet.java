@@ -43,6 +43,9 @@ public class CriarProfessorServlet extends HttpServlet {
             em.persist(professor);
             utx.commit();
             
+            List professores = em.createQuery("select p from Professor p order by p.nome").getResultList();
+            request.setAttribute("listaProfessores",professores);
+            
             request.getRequestDispatcher("ListarPessoas.jsp").forward(request, response);
         } catch (Exception ex) {
             throw new ServletException(ex);
