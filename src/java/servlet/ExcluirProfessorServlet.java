@@ -33,7 +33,7 @@ public class ExcluirProfessorServlet extends HttpServlet {
             
             Long id  = Long.parseLong( (String) request.getParameter("idExcluir"));
             
-            Professor professor = em.find(Professor.class, id);
+            Professor professor = (Professor) em.find(Professor.class, id);
             if (professor != null) {
                     em.getTransaction().begin();
                     em.remove(professor);
