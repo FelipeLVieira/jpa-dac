@@ -28,10 +28,9 @@
     <td>${professor.email}&nbsp;&nbsp;</td>
     <td>${professor.titulacao}&nbsp;&nbsp;</td>
     <td><a href="EditarProfessor.jsp?param1=${professor.id}&param2=${professor.nome}&param3=${professor.email}&param4=${professor.titulacao}" ><strong>Editar</strong></a></td>
-    <td><form name="submitForm" method="POST" action="/servlet/ExcluirProfessorServlet">
-            <input type="hidden" name="${professor.id}" value="param1Value">
-            <a HREF="javascript:document.submitForm.submit()">Excluir</a>
-</form></td>
+    <td><form action="ExcluirProfessorServlet" method="post">
+        <button type="submit" name="idExcluir" value="${professor.id}" class="btn-link">Excluir</button>
+        </form></td>
 </tr> 
 
 </c:forEach>
