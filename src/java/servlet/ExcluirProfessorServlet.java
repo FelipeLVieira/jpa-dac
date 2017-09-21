@@ -30,16 +30,16 @@ public class ExcluirProfessorServlet extends HttpServlet {
         assert emf != null;
         EntityManager em = null;
         try {
+            utx.begin();
+            em = emf.createEntityManager();
             
             Long id  = Long.parseLong( (String) request.getParameter("idExcluir"));
             
-            Professor professor = (Professor) em.find(Professor.class, id);
+            Professor professor = (Professor) em.getReference(Professor.class, id);
             if (professor != null) {
-                    em.getTransaction().begin();
                     em.remove(professor);
-                    em.getTransaction().commit();
             }
-            
+            utx.commit();
             List professores = em.createQuery("select p from Professor p order by p.nome").getResultList();
             request.setAttribute("listaProfessores",professores);
             
