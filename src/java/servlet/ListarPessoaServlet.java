@@ -14,7 +14,7 @@ import javax.persistence.EntityManager;
 @WebServlet(name="ListarPessoaServlet", urlPatterns={"/ListarPessoas"})
 public class ListarPessoaServlet extends HttpServlet {
     
-    @PersistenceUnit
+    @PersistenceUnit(unitName = "web-jpaPU")
     private EntityManagerFactory emf;
     
     

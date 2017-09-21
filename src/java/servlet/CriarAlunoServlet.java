@@ -16,8 +16,7 @@ import entities.Aluno;
 @WebServlet(name="CriarAlunoServlet", urlPatterns={"/CriarAlunoServlet"})
 public class CriarAlunoServlet extends HttpServlet {
     
-    @PersistenceUnit
-    //The emf corresponding to 
+    @PersistenceUnit(unitName = "web-jpaPU")
     private EntityManagerFactory emf;  
     
     @Resource

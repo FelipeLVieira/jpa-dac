@@ -18,7 +18,7 @@ import entities.Professor;
 @WebServlet(name="ExcluirProfessorServlet", urlPatterns={"/ExcluirProfessorServlet"})
 public class ExcluirProfessorServlet extends HttpServlet {
     
-    @PersistenceUnit 
+    @PersistenceUnit(unitName = "web-jpaPU")
     private EntityManagerFactory emf;  
     
     @Resource

@@ -21,7 +21,7 @@ import entities.Professor;
 @WebServlet(name="EditarProfessorServlet", urlPatterns={"/EditarProfessorServlet"})
 public class EditarProfessorServlet extends HttpServlet {
 
-    @PersistenceUnit
+    @PersistenceUnit(unitName = "web-jpaPU")
     private EntityManagerFactory emf;  
     
     @Resource
