@@ -1,6 +1,7 @@
-package enterprise.web_jpa_war.servlet;
+package servlet;
 
 import java.io.*;
+import java.util.List;
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
@@ -10,14 +11,14 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityManager;
 import javax.annotation.Resource;
 import javax.transaction.UserTransaction;
-import jpa.entities.Professor;
+import entities.Professor;
 
 
-@WebServlet(name="CriarProfessor", urlPatterns={"/CriarProfessor"})
+
+@WebServlet(name="CriarProfessorServlet", urlPatterns={"/CriarProfessorServlet"})
 public class CriarProfessorServlet extends HttpServlet {
     
-    @PersistenceUnit
-    //The emf corresponding to 
+    @PersistenceUnit 
     private EntityManagerFactory emf;  
     
     @Resource
@@ -26,37 +27,29 @@ public class CriarProfessorServlet extends HttpServlet {
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException {
-        assert emf != null;  //Make sure injection went through correctly.
+        assert emf != null;
         EntityManager em = null;
         try {
             
-            //Get the data from user's form
             String nome  = (String) request.getParameter("nome");
-            String titulacao = (String) request.getParameter("titulacao");
-            String email = (String) request.getParameter("email");
+            String email   = (String) request.getParameter("email");
+            String titulacao   = (String) request.getParameter("titulacao");
             
-            //Create a person instance out of it
+
             Professor professor = new Professor(0l, nome, email, titulacao);
-            
-            //begin a transaction
+
             utx.begin();
-            //create an em. 
-            //Since the em is created inside a transaction, it is associsated with 
-            //the transaction
             em = emf.createEntityManager();
-            //persist the person entity
             em.persist(professor);
-            //commit transaction which will trigger the em to 
-            //commit newly created entity into database
             utx.commit();
             
-            //Forward to ListPerson servlet to list persons along with the newly
-            //created person above
-            request.getRequestDispatcher("ListarPessoas").forward(request, response);
+            List professores = em.createQuery("select p from Professor p order by p.nome").getResultList();
+            request.setAttribute("listaProfessores",professores);
+            
+            request.getRequestDispatcher("ListarPessoas.jsp").forward(request, response);
         } catch (Exception ex) {
             throw new ServletException(ex);
         } finally {
-            //close the em to release any resources held up by the persistebce provider
             if(em != null) {
                 em.close();
             }
@@ -68,13 +61,11 @@ public class CriarProfessorServlet extends HttpServlet {
         processRequest(request, response);
     }
     
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         processRequest(request, response);
     }
     
-
     public String getServletInfo() {
         return "Short description";
     }

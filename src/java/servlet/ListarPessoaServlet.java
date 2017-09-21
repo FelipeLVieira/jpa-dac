@@ -1,4 +1,4 @@
-package enterprise.web_jpa_war.servlet;
+package servlet;
 
 import java.io.*;
 import java.util.List;

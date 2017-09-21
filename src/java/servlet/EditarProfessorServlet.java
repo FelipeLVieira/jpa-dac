@@ -1,4 +1,4 @@
-package enterprise.web_jpa_war.servlet;
+package servlet;
 
 import java.io.IOException;
 import javax.annotation.Resource;
@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.transaction.UserTransaction;
-import jpa.entities.Professor;
+import entities.Professor;
 
 /**
  *
@@ -22,7 +22,6 @@ import jpa.entities.Professor;
 public class EditarProfessorServlet extends HttpServlet {
 
     @PersistenceUnit
-    //The emf corresponding to 
     private EntityManagerFactory emf;  
     
     @Resource
@@ -34,7 +33,7 @@ public class EditarProfessorServlet extends HttpServlet {
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException {
-        assert emf != null;  //Make sure injection went through correctly.
+        assert emf != null;
         EntityManager em = null;
         try {
             
@@ -54,7 +53,6 @@ public class EditarProfessorServlet extends HttpServlet {
         } catch (Exception ex) {
             throw new ServletException(ex);
         } finally {
-            //close the em to release any resources held up by the persistebce provider
             if(em != null) {
                 em.close();
             }

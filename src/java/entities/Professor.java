@@ -1,35 +1,35 @@
-package jpa.entities;
+package entities;
 
 import java.io.Serializable;
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  *
  * @author felip
  */
 @Entity
-@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
-public class Pessoa implements Serializable {
+public class Professor implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    
     private String nome;
     private String email;
+    private String titulacao;
 
-    public Pessoa() {
+    public Professor() {
     }
 
-    public Pessoa(Long id, String nome) {
-        this.id = id;
-        this.nome = nome;
-    }
-
-    public Pessoa(Long id, String nome, String email) {
+    public Professor(Long id, String nome, String email, String titulacao) {
         this.id = id;
         this.nome = nome;
         this.email = email;
+        this.titulacao = titulacao;
     }
 
     public Long getId() {
@@ -56,6 +56,16 @@ public class Pessoa implements Serializable {
         this.email = email;
     }
 
+    public String getTitulacao() {
+        return titulacao;
+    }
+
+    public void setTitulacao(String titulacao) {
+        this.titulacao = titulacao;
+    }
+    
+    
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -65,11 +75,10 @@ public class Pessoa implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Pessoa)) {
+        if (!(object instanceof Professor)) {
             return false;
         }
-        Pessoa other = (Pessoa) object;
+        Professor other = (Professor) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -78,7 +87,7 @@ public class Pessoa implements Serializable {
 
     @Override
     public String toString() {
-        return "jpa.entities.Pessoa[ id=" + id + " ]";
+        return "entities.Professor[ id=" + id + " ]";
     }
     
 }

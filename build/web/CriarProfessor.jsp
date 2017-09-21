@@ -13,14 +13,14 @@
     <body>
 
     <h1>Criar um professor</h1>
-    <form id="criarProfessorForm" action="CriarProfessor" method="post">
+    <form id="criarProfessorForm" action="CriarProfessorServlet" method="post">
     <table>
         <tr><td>ID:</td><td><input type="text" id = "id" name="id" disabled="true" /></td></tr>
         <tr><td>Nome:</td><td><input type="text" id = "nome" name="nome" /></td></tr>
         <tr><td>Titulacao:</td><td><input type="text" id = "titulacao" name="titulacao" /></td></tr>
         <tr><td>Email:</td><td><input type="text" id = "email" name="email" /></td></tr>
     </table>
-    <input type="submit" id="CriarProfessor" value="CriarProfessor" />
+    <input type="submit" id="CriarProfessorServlet" value="CriarProfessorServlet" />
     </form>
 <a href="ListarPessoas"><strong>Ir para lista de pessoas</strong></a>
 </body>

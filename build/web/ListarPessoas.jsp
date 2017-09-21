@@ -22,10 +22,12 @@
 </tr>
 <c:forEach var="professor" begin="0" items="${requestScope.listaProfessores}">
 <tr>
+    <input type="hidden" id="idHidden" name="idHidden" value="${professor.id}}">
     <td>${professor.nome}&nbsp;&nbsp;</td>
     <td>${professor.email}&nbsp;&nbsp;</td>
     <td>${professor.titulacao}&nbsp;&nbsp;</td>
     <td><a href="EditarProfessor.jsp?param1=${professor.id}&param2=${professor.nome}&param3=${professor.email}&param4=${professor.titulacao}" ><strong>Editar</strong></a></td>
+    <td><a href="ExcluirProfessorServlet" ><strong>Excluir</strong></a></td>
 </tr> 
 
 </c:forEach>

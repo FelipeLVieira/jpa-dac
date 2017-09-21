@@ -1,4 +1,4 @@
-package enterprise.web_jpa_war.servlet;
+package servlet;
 
 import java.io.*;
 import javax.servlet.*;
@@ -10,10 +10,10 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityManager;
 import javax.annotation.Resource;
 import javax.transaction.UserTransaction;
-import jpa.entities.Aluno;
+import entities.Aluno;
 
 
-@WebServlet(name="CriarAluno", urlPatterns={"/CriarAluno"})
+@WebServlet(name="CriarAlunoServlet", urlPatterns={"/CriarAlunoServlet"})
 public class CriarAlunoServlet extends HttpServlet {
     
     @PersistenceUnit
