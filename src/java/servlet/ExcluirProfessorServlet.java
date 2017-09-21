@@ -31,7 +31,7 @@ public class ExcluirProfessorServlet extends HttpServlet {
         EntityManager em = null;
         try {
             
-            Long id  = Long.parseLong( (String) request.getParameter("idHidden"));
+            Long id  = Long.parseLong( (String) request.getParameter("param1"));
             
             Professor professor = em.find(Professor.class, id);
             if (professor != null) {
